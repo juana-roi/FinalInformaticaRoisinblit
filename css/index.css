@@ -75,3 +75,23 @@
     gap: 15px;
   }
 }
+
+/* BOTÓN VERDE MUSGOSO CON EFECTO DE LUZ */
+.btn-hongos {
+  display: inline-block;
+  background-color: #4B5F3A; /* verde musgoso */
+  color: white;
+  padding: 12px 28px;
+  border-radius: 9999px; /* totalmente redondo */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 12px rgba(80, 50, 20, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.btn-hongos:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(120, 72, 0, 0.7);
+}
