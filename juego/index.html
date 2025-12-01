@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SITIO WEB ROISINBLIT</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	  <link rel="stylesheet" href="../css/index.css">
+      <link rel="stylesheet" href="../css/juego.css">
+</head>
+<body>
+<nav class="nav-container bg-green-900 text-white shadow-lg">
+  <div class="flex-1 flex justify-between items-center">
+    <a href="https://rz-codes.com" class="logo-area">
+      <img
+        src="https://i.pinimg.com/736x/76/7b/78/767b78e90678f4dbfe20be71e51e2b40.jpg"
+        width="50"
+        height="50"
+        class="p-2"
+        alt="Logo"
+      />
+      <div class="logo-text">Juanini</div>
+    </a>
+  </div>
+
+  <label for="menu-toggle" class="menu-icon lg-hidden">
+    <svg
+      class="fill-current text-gray-900"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+    >
+      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+    </svg>
+  </label>
+
+  <input class="hidden" type="checkbox" id="menu-toggle" />
+
+  <div class="menu" id="menu">
+     <ul>
+      <li><a href="../index.html">Presentación</a></li>
+      <li><a href="../europa/index.html">Europa</a></li>
+      <li><a href="../asia/index.html">Asia</a></li>
+      <li><a href="../america/index.html">América</a></li>
+      <li><a href="../oceania/index.html">Oceanía</a></li>
+      <li><a href="../africa/index.html">África</a></li>
+      <li><a href="../antartida/index.html">Antartida</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+<main class="profile-page flex flex-col items-center justify-center text-center min-h-screen" flex flex-col items-center justify-center min-h-screen
+>
+  <section id="pantalla-inicial" class="text-center space-y-10">
+
+        <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+            🌿 Juego del Mundo Fungi 🌿
+        </h1>
+
+        <p class="text-xl text-green-100 max-w-xl mx-auto drop-shadow-lg">
+            Elige tu nivel de dificultad para comenzar.  
+            Cada nivel tiene sus propias reglas y tiempos.
+        </p>
+
+        <!-- BOTONES DE DIFICULTAD -->
+        <div class="flex flex-col gap-8 mt-10 w-full max-w-lg mx-auto">
+
+            <!-- FÁCIL -->
+            <button
+                data-dificultad="facil"
+                class="btn-dificultad group relative 
+                       bg-green-700 hover:bg-green-800 
+                       text-white font-bold py-6 rounded-2xl 
+                       transition-all duration-300 text-3xl">
+                
+                <span class="texto-normal opacity-100 group-hover:opacity-0 transition-opacity duration-500 block">
+                    Fácil
+                </span>
+
+                <span class="texto-hover absolute inset-0 flex items-center justify-center 
+                             opacity-0 group-hover:opacity-100 
+                             transition-opacity duration-500 text-xl px-6">
+                    Preguntas simples · 15 segundos · 1 punto por acierto
+                </span>
+            </button>
+
+            <!-- MEDIO -->
+            <button
+                data-dificultad="medio"
+                class="btn-dificultad group relative 
+                       bg-green-700 hover:bg-green-800 
+                       text-white font-bold py-6 rounded-2xl 
+                       transition-all duration-300 text-3xl">
+
+                <span class="texto-normal opacity-100 group-hover:opacity-0 transition-opacity duration-500 block">
+                    Medio
+                </span>
+
+                <span class="texto-hover absolute inset-0 flex items-center justify-center 
+                             opacity-0 group-hover:opacity-100 
+                             transition-opacity duration-500 text-xl px-6">
+                    10 segundos por pregunta · 2 puntos por acierto
+                </span>
+            </button>
+
+            <!-- DIFÍCIL -->
+            <button
+                data-dificultad="dificil"
+                class="btn-dificultad group relative 
+                       bg-green-700 hover:bg-green-800 
+                       text-white font-bold py-6 rounded-2xl 
+                       transition-all duration-300 text-3xl">
+
+                <span class="texto-normal opacity-100 group-hover:opacity-0 transition-opacity duration-500 block">
+                    Difícil
+                </span>
+
+                <span class="texto-hover absolute inset-0 flex items-center justify-center 
+                             opacity-0 group-hover:opacity-100 
+                             transition-opacity duration-500 text-xl px-6">
+                    10 segundos · 3 puntos por acierto · preguntas complejas
+                </span>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- PANTALLA DE PREGUNTAS (OCULTA AL INICIO) -->
+    <section id="pantalla-preguntas" 
+         class="hidden text-center w-full max-w-2xl mx-auto flex justify-center">
+        <div class="bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-xl">
+
+            <h2 id="texto-pregunta" class="text-2xl font-bold mb-6 text-green-900">
+                Pregunta aquí
+            </h2>
+
+            <!-- Timer -->
+            <div id="timer" class="text-3xl font-bold text-green-700 mb-6">
+                00
+            </div>
+
+            <!-- BOTONES DE RESPUESTA -->
+            <div class="flex flex-col gap-6">
+                <button id="btn-verdadero"
+                        class="bg-green-700 hover:bg-green-800 text-white py-4 rounded-xl text-2xl font-bold">
+                    Verdadero
+                </button>
+                <button id="btn-falso"
+                        class="bg-red-700 hover:bg-red-800 text-white py-4 rounded-xl text-2xl font-bold">
+                    Falso
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- RESULTADOS -->
+    <section id="pantalla-resultados" 
+         class="hidden text-center w-full max-w-3xl mx-auto flex justify-center">
+
+        <div class="bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-xl">
+
+            <h2 class="text-3xl font-bold text-green-900 mb-6">
+                Resultados
+            </h2>
+
+            <p id="puntaje-final" class="text-2xl text-green-900 font-semibold mb-6">
+                Puntaje:
+            </p>
+
+            <div id="lista-resultados"
+                 class="text-left text-lg text-green-900 space-y-3">
+            </div>
+
+            <button onclick="location.reload()"
+                    class="mt-8 bg-green-700 hover:bg-green-800 text-white py-4 px-8 rounded-xl text-xl font-bold">
+                Jugar de nuevo
+            </button>
+
+        </div>
+    </section>
+
+    </main>
+    <footer class="relative bg-green-900 text-white pt-8 pb-6 mt-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center md:justify-between justify-center">
+      <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+        <div class="text-sm text-blueGray-500 font-semibold py-1">
+          Hecho por<a href="mailto:juanaroibossio@gmail.com" class="text-blueGray-500 hover:text-gray-800" target="_blank">Juanita</a>,y puedes contactarnos desde los botones a la derecha
+        <div class="absolute bottom-4 right-4 flex gap-3">
+  <a href="../contacto.html"
+     class="align-middle select-none font-sans font-bold text-center uppercase transition-all text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-full">
+     CONTACTO
+  </a>
+  <a href="../formulario.html"
+     class="align-middle select-none font-sans font-bold text-center uppercase transition-all text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-full">
+     FORMULARIO
+  </a>
+        </div>
+        </div><!--AGREGAR BOTONES AL COSTADO IZQUIERDO PARA CONTACTO Y FORMULARIO-->
+    </div>
+  </div>
+  </div>
+</footer>
+<script src="../js/nav.js"></script>
+<script src="../js/juego.js"></script>
+</body>
+</html>

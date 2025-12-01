@@ -1,0 +1,174 @@
+/* -----------------------------
+   ESTILO GENERAL DEL JUEGO
+--------------------------------*/
+
+body {
+  font-family: 'Zilla Slab', serif;
+  background: #0f1f0f; /* tono bosque oscuro */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #e8f5e9;
+  overflow-x: hidden;
+}
+
+/* fondo tipo bosque en degradado */
+.forest-bg {
+  background: linear-gradient(
+    180deg,
+    #122415 0%,
+    #0e1b10 40%,
+    #09130a 100%
+  );
+}
+
+/* -----------------------------
+   CONTENEDORES PRINCIPALES
+--------------------------------*/
+
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* -----------------------------
+   BOTONES DE DIFICULTAD
+--------------------------------*/
+
+.difficulty-btn {
+  width: 260px;
+  height: 110px;
+  border-radius: 1rem;
+  background: #1c3b1f;
+  border: 3px solid #2e5d30;
+  color: #e8f5e9;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+/* Efecto de agrandar un poquito */
+.difficulty-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Contenido que va a hacer el fade */
+.difficulty-btn span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+  font-size: 1.6rem;
+}
+
+/* Texto alternativo que aparece al hover */
+.difficulty-btn .hover-text {
+  opacity: 0;
+  padding: 0 15px;
+}
+
+.difficulty-btn:hover .main-text {
+  opacity: 0;
+}
+
+.difficulty-btn:hover .hover-text {
+  opacity: 1;
+}
+
+/* -----------------------------
+   BOTONES DE RESPUESTA
+--------------------------------*/
+
+.answer-btn {
+  width: 90%;
+  max-width: 450px;
+  padding: 1rem;
+  margin: 8px 0;
+  font-size: 1.4rem;
+  background: #1d3b1f;
+  border: 2px solid #2f5f31;
+  color: #e9ffe9;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.answer-btn:hover {
+  background: #244a26;
+  transform: scale(1.02);
+}
+
+/* -----------------------------
+   TEMPORIZADOR
+--------------------------------*/
+
+.timer {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  background: #1d311f;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid #315232;
+  color: #d2ffd2;
+}
+
+/* -----------------------------
+   RESULTADOS
+--------------------------------*/
+
+.result-item {
+  background: #132616;
+  border-left: 5px solid #39803d;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  color: #e8ffe8;
+  border-radius: 0.5rem;
+}
+
+.result-item.fail {
+  border-left-color: #a12424;
+}
+
+/* -----------------------------
+   SCROLL SUAVE
+--------------------------------*/
+
+html {
+  scroll-behavior: smooth;
+}
+/* nav*/
+nav.nav-container {
+    background-color: #064e3b !important;
+    color: white !important;
+}
+nav.nav-container a {
+    color: white !important;
+}
+.menu-icon svg {
+    color: white !important;
+}
+/*footer*/
+footer {
+    background-color: #064e3b !important;
+    color: white !important;
+}
+footer a {
+    color: #d1fae5 !important; /* verde claro */
+}
