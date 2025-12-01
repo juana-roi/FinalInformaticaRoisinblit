@@ -46,7 +46,6 @@
       <li><a href="africa/index.html">África</a></li>
       <li><a href="antartida/index.html">Antartida</a></li>
      <li><a href="juego/index.html">Juego</a></li> 
-     <li><a href="galeriaimg.html">galerucha</a></li> 
     </ul>
   </div>
 </nav>
@@ -81,16 +80,62 @@
             
           </div>
           <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
-            <div class="flex flex-wrap justify-center">
+           <div class="flex flex-wrap justify-center"> 
               <div class="w-full lg:w-9/12 px-4">
-                <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                  TEXTO
-                </p>
-              </div>
+              <!-- GALERÍA DE 6 CARRUSELES -->
+
+<div class="grid grid-cols-3 gap-8 mt-10 place-items-center">
+
+  <div class="text-center w-full flex flex-col items-center">
+    <img id="carrusel-img" class="h-48 w-48 rounded-xl shadow hover-sound" />
+    <p>África</p>
+  </div>
+
+  <div class="text-center w-full flex flex-col items-center">
+    <img id="carrusel-img1" class="h-48 w-48 rounded-xl shadow hover-sound" />
+    <p>América</p>
+  </div>
+
+  <div class="text-center w-full flex flex-col items-center">
+    <img id="carrusel-img2" class="h-48 w-48 rounded-xl shadow hover-sound" />
+    <p>Antártida</p>
+  </div>
+
+  <div class="text-center w-full flex flex-col items-center">
+    <img id="carrusel-img3" class="h-48 w-48 rounded-xl shadow hover-sound" />
+    <p>Asia</p>
+  </div>
+
+  <div class="text-center w-full flex flex-col items-center">
+    <img id="carrusel-img4" class="h-48 w-48 rounded-xl shadow hover-sound" />
+    <p>Europa</p>
+  </div>
+
+  <div class="text-center w-full flex flex-col items-center">
+    <img id="carrusel-img5" class="h-48 w-48 rounded-xl shadow hover-sound" />
+    <p>Oceanía</p>
+  </div>
+
+</div>
+<div class="w-full max-w-3xl mx-auto mt-10">
+  <div class="border-4 border-black rounded-xl overflow-hidden shadow-lg">
+    <div class="relative pb-[56.25%] h-0">
+      <iframe
+        class="absolute top-0 left-0 w-full h-full"
+        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
+        title="YouTube video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </div>
       </div>
+      
     </section>
     </main>
     <footer class="relative bg-blueGray-200 pt-8 pb-6 mt-8">
@@ -114,6 +159,9 @@
   </div>
   </div>
 </footer>
+<audio id="hover-sound" src="sonido/magic.mp3"></audio>
 <script src="js/nav.js"></script>
+<script src="js/galeriaimg.js"></script>
+
 </body>
 </html>
