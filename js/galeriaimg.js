@@ -106,3 +106,36 @@ document.querySelectorAll(".hover-sound").forEach(img => {
     hoverSound.play();
   });
 });
+// ----- RESPONSIVE DE LOS CARRUSELES -----
+function ajustarCarruseles() {
+    const grid = document.getElementById("galeria-carruseles");
+
+    if (!grid) return;
+
+    const ancho = window.innerWidth;
+
+    if (ancho < 640) {
+        // Celulares
+        grid.style.display = "grid";
+        grid.style.gridTemplateColumns = "1fr";
+        grid.style.gap = "20px";
+    }
+    else if (ancho < 1024) {
+        // Tablets
+        grid.style.display = "grid";
+        grid.style.gridTemplateColumns = "1fr 1fr";
+        grid.style.gap = "30px";
+    }
+    else {
+        // Computadora
+        grid.style.display = "grid";
+        grid.style.gridTemplateColumns = "1fr 1fr 1fr";
+        grid.style.gap = "40px";
+    }
+}
+
+// Ejecutar al cargar la página
+ajustarCarruseles();
+
+// Ejecutar cada vez que la ventana cambie tamaño
+window.addEventListener("resize", ajustarCarruseles);

@@ -54,7 +54,7 @@
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
-<main class="profile-page flex flex-col items-center justify-center text-center min-h-screen" flex flex-col items-center justify-center min-h-screen
+<main class="profile-page flex flex-col items-center justify-center text-center min-h-screen" style="background-image: url(../img/fondojuego1.jpg)"
 >
   <section id="pantalla-inicial" class="text-center space-y-10">
 
@@ -186,31 +186,48 @@
     </section>
 
     </main>
-    <footer class="relative bg-green-900 text-white pt-8 pb-6 mt-8">
+   <footer class="bg-green-900 text-white pt-8 pb-6 mt-8">
   <div class="container mx-auto px-4">
-    <div class="flex flex-wrap items-center md:justify-between justify-center">
-      <div class="w-full md:w-6/12 px-4 mx-auto text-center">
-        <div class="text-sm text-blueGray-500 font-semibold py-1">
-          Hecho por<a href="mailto:juanaroibossio@gmail.com" class="text-blueGray-500 hover:text-gray-800" target="_blank">Juanita</a>,y puedes contactarnos desde los botones a la derecha
-        <div class="absolute bottom-4 right-4 flex gap-3">
-             <a href="../galeriaimg.html"
-     class="align-middle select-none font-sans font-bold text-center uppercase transition-all text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-full">
-     GALERIA
-  </a>
-  <a href="../contacto.html"
-     class="align-middle select-none font-sans font-bold text-center uppercase transition-all text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-full">
-     CONTACTO
-  </a>
-  <a href="../formulario.html"
-     class="align-middle select-none font-sans font-bold text-center uppercase transition-all text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-full">
-     FORMULARIO
-  </a>
-        </div>
-        </div><!--AGREGAR BOTONES AL COSTADO IZQUIERDO PARA CONTACTO Y FORMULARIO-->
+
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left">
+
+      <!-- Texto -->
+      <div class="mb-6 md:mb-0">
+        <p class="text-sm">
+          Hecho por
+          <a href="mailto:juanaroibossio@gmail.com" class="hover:text-gray-300">
+            Juanita
+          </a>,
+          y puedes contactarnos desde los botones a la derecha.
+        </p>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex flex-wrap justify-center gap-3 md:justify-end">
+
+        <a href="../galeriaimg.html"
+           class="select-none font-bold text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white 
+                  shadow-md hover:shadow-lg active:opacity-85 rounded-full uppercase">
+          GALERIA
+        </a>
+
+        <a href="../contacto.html"
+           class="select-none font-bold text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white 
+                  shadow-md hover:shadow-lg active:opacity-85 rounded-full uppercase">
+          CONTACTO
+        </a>
+
+        <a href="../formulario.html"
+           class="select-none font-bold text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white 
+                  shadow-md hover:shadow-lg active:opacity-85 rounded-full uppercase">
+          FORMULARIO
+        </a>
+
+      </div>
     </div>
   </div>
-  </div>
 </footer>
+
 <script src="../js/nav.js"></script>
 <script src="../js/juego.js"></script>
 </body>
