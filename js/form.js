@@ -1,33 +1,43 @@
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+// Inicializar EmailJS
+(function() {
+    emailjs.init("UZ2h8lJRq6hRd5nGg"); 
+})();
 
-    const nombre = document.getElementById("nombre").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
+// Crear la app Vue
+const app = Vue.createApp({
+    data() {
+        return {
+            form: {
+                name: "",
+                email: "",
+                message: ""
+            }
+        };
+    },
 
-    if (!nombre || !email || !mensaje) {
-        alert("Todos los campos son obligatorios.");
-        return;
+    methods: {
+        enviarFormulario() {
+            // Enviar los datos con EmailJS
+            emailjs.send("service_4744zc6", "template_kxfslzw", {
+                user_name: this.form.name,
+                user_email: this.form.email,
+                message: this.form.message
+            })
+            .then(() => {
+                alert("Mensaje enviado correctamente!");
+                
+                // Limpiar formulario
+                this.form.name = "";
+                this.form.email = "";
+                this.form.message = "";
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                alert("Hubo un error al enviar el mensaje.");
+            });
+        }
     }
-
-    // Validar Gmail
-    if (!email.endsWith("@gmail.com")) {
-        alert("El correo debe ser una dirección Gmail.");
-        return;
-    }
-
-    const params = {
-        nombre: nombre,
-        email: email,
-        mensaje: mensaje
-    };
-
-    emailjs.send("service_4744zc6", "template_kxfslzw", params)
-        .then(() => {
-            alert("Mensaje enviado correctamente ");
-            document.getElementById("contactForm").reset();
-        })
-        .catch(() => {
-            alert("Ocurrió un error al enviar el mensaje.");
-        });
 });
+
+// Montar Vue
+app.mount("#app");
